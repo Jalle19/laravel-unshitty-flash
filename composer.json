@@ -1,6 +1,6 @@
 {
     "name": "jalle19/laravel-unshitty-flash",
-    "description": "Proper flash notifications for Laravel",
+    "description": "Highly opinionated flash message service for Laravel",
     "type": "library",
     "license": "MIT",
     "authors": [
