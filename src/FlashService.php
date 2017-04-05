@@ -49,6 +49,7 @@ class FlashService
         $session = $request->session();
 
         // Retrieve any existing data
+        $session->ageFlashData();
         $data = $session->get($this->sessionKey, []);
 
         // Append the new message and store again
