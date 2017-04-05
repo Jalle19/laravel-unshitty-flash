@@ -1,0 +1,30 @@
+{
+    "name": "jalle19/laravel-unshitty-flash",
+    "description": "Proper flash notifications for Laravel",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Sam Stenvall",
+            "email": "neggelandia@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">= 7.0",
+        "illuminate/support": "^5.4",
+        "illuminate/http": "^5.4"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^6.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Jalle19\\Laravel\\UnshittyFlash\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Jalle19\\Laravel\\UnshittyFlash\\Tests\\": "tests/"
+        }
+    }
+}
