@@ -49,6 +49,13 @@ $this->flashService->warning($request, 'Some warning');
 $this->flashService->danger($request, 'Some dangerous message');
 ```
 
+If you need to flash a message to the current request, (e.g. from a middleware that displays a permanent message), pass 
+`true` as the third parameter:
+
+```php
+$this->flashService->info($request, 'Permanently visible message', true);
+```
+
 If the message levels above are not enough for you, you can use an arbitrary level using the `message()` method:
 
 ```php
