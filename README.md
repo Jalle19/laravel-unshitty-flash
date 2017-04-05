@@ -51,7 +51,7 @@ $this->flashService->danger($request, 'Some dangerous message');
 If the message levels above are not enough for you, you can use an arbitrary level using the `message()` method:
 
 ```php
-$this->flashService->message($request, 'Some rant about libraries', 'rant);
+$this->flashService->message($request, 'Some rant about libraries', 'rant');
 ```
 
 To render the flash messages in your views, you can use something like the following snippet:
