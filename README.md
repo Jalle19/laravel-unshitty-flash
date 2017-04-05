@@ -1,5 +1,9 @@
 # laravel-unshitty-flash
 
+[![Build Status](https://travis-ci.org/Jalle19/laravel-unshitty-flash.svg?branch=master)](https://travis-ci.org/Jalle19/laravel-unshitty-flash) 
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/Jalle19/laravel-unshitty-flash/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/Jalle19/laravel-unshitty-flash/?branch=master) 
+[![Coverage Status](https://coveralls.io/repos/github/Jalle19/laravel-unshitty-flash/badge.svg?branch=master)](https://coveralls.io/github/Jalle19/laravel-unshitty-flash?branch=master)
+
 Highly opinionated flash message service for Laravel. In contrast to practically all other similar libraries I've seen, 
 this one:
 
