@@ -21,4 +21,15 @@ class FlashServiceProvider extends ServiceProvider
         });
     }
 
+
+    /**
+     *
+     */
+    public function boot()
+    {
+        $this->publishes([
+            __DIR__ . '/../config/flash.php' => config_path('flash.php'),
+        ]);
+    }
+
 }
