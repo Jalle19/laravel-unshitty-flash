@@ -49,8 +49,8 @@ class FlashServiceTest extends TestCase
         $this->getFlashService()->success($request, 'Test message');
         $this->assertCount(1, $request->session()->get(self::SESSION_KEY));
 
-        // Add the exact same message again
-        $this->getFlashService()->success($request, 'Test message');
+        // Add the exact same message again, but flash to the current request
+        $this->getFlashService()->success($request, 'Test message', true);
         $this->assertCount(2, $request->session()->get(self::SESSION_KEY));
 
         // Add another one of the same level, should be two now

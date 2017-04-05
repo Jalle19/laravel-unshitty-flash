@@ -9,6 +9,7 @@ this one:
 
 * Supports multiple messages
 * Supports multiple identical messages
+* Supports flashing immediately, i.e. to the current request
 * Let's you configure the session key used
 * Forces you to inject the service, no magic facade
 * Forces you to operate on the `Request` object itself

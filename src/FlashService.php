@@ -43,58 +43,67 @@ class FlashService
      * @param Request $request
      * @param string  $message
      * @param string  $level
+     * @param bool    $sameRequest
      */
-    public function message(Request $request, string $message, string $level)
+    public function message(Request $request, string $message, string $level, bool $sameRequest = false)
     {
         $session = $request->session();
 
-        // Retrieve any existing data
-        $session->ageFlashData();
         $data = $session->get($this->sessionKey, []);
 
         // Append the new message and store again
         $data[] = ['message' => $message, 'level' => $level];
-        $session->flash($this->sessionKey, $data);
+
+        // Flash the message, either immediately or for the next request
+        if ($sameRequest) {
+            $session->now($this->sessionKey, $data);
+        } else {
+            $session->flash($this->sessionKey, $data);
+        }
     }
 
 
     /**
      * @param Request $request
      * @param string  $message
+     * @param bool    $sameRequest
      */
-    public function success(Request $request, string $message)
+    public function success(Request $request, string $message, bool $sameRequest = false)
     {
-        $this->message($request, $message, self::LEVEL_SUCCESS);
+        $this->message($request, $message, self::LEVEL_SUCCESS, $sameRequest);
     }
 
 
     /**
      * @param Request $request
      * @param string  $message
+     * @param bool    $sameRequest
      */
-    public function info(Request $request, string $message)
+    public function info(Request $request, string $message, bool $sameRequest = false)
     {
-        $this->message($request, $message, self::LEVEL_INFO);
+        $this->message($request, $message, self::LEVEL_INFO, $sameRequest);
     }
 
 
     /**
      * @param Request $request
      * @param string  $message
+     * @param bool    $sameRequest
      */
-    public function warning(Request $request, string $message)
+    public function warning(Request $request, string $message, bool $sameRequest = false)
     {
-        $this->message($request, $message, self::LEVEL_WARNING);
+        $this->message($request, $message, self::LEVEL_WARNING, $sameRequest);
     }
 
 
     /**
      * @param Request $request
      * @param string  $message
+     * @param bool    $sameRequest
      */
-    public function danger(Request $request, string $message)
+    public function danger(Request $request, string $message, bool $sameRequest = false)
     {
-        $this->message($request, $message, self::LEVEL_DANGER);
+        $this->message($request, $message, self::LEVEL_DANGER, $sameRequest);
     }
 
 }
