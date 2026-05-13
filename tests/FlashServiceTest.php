@@ -121,9 +121,9 @@ class ArraySessionHandler implements SessionHandlerInterface
     /**
      * @inheritdoc
      */
-    public function close()
+    public function close(): bool
     {
-
+        return true;
     }
 
 
@@ -131,45 +131,47 @@ class ArraySessionHandler implements SessionHandlerInterface
      * @inheritdoc
      */
 
-    public function destroy($session_id)
+    public function destroy($session_id): bool
     {
-
+        return true;
     }
 
 
     /**
      * @inheritdoc
      */
-    public function gc($maxlifetime)
+    public function gc($maxlifetime): int | false
     {
-
+        return false;
     }
 
 
     /**
      * @inheritdoc
      */
-    public function open($save_path, $name)
+    public function open($save_path, $name): bool
     {
-
+        return true;
     }
 
 
     /**
      * @inheritdoc
      */
-    public function read($session_id)
+    public function read($session_id): string | false
     {
-        Arr::get($this->data, $session_id);
+        return (string)Arr::get($this->data, $session_id);
     }
 
 
     /**
      * @inheritdoc
      */
-    public function write($session_id, $session_data)
+    public function write($session_id, $session_data): bool
     {
         Arr::set($this->data, $session_id, $session_data);
+
+        return true;
     }
 
 }
