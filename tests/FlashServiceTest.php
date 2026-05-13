@@ -19,11 +19,9 @@ class FlashServiceTest extends TestCase
     const SESSION_KEY = 'flash_notifications';
 
 
-    /**
-     * @expectedException \InvalidArgumentException
-     */
     public function testMissingConfiguration()
     {
+        $this->expectException(\InvalidArgumentException::class);
         new FlashService([]);
     }
 
