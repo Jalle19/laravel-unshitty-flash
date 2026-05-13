@@ -5,6 +5,7 @@ namespace Jalle19\Laravel\UnshittyFlash\Tests;
 use Illuminate\Contracts\Foundation\Application;
 use Jalle19\Laravel\UnshittyFlash\FlashService;
 use Jalle19\Laravel\UnshittyFlash\FlashServiceProvider;
+use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -19,10 +20,8 @@ class FlashServiceProviderTest extends TestCase
      */
     public function testRegister()
     {
-        /* @var Application|\PHPUnit_Framework_MockObject_MockObject $app */
-        $app = $this->getMockBuilder(Application::class)
-                    ->setMethods(['singleton'])
-                    ->getMockForAbstractClass();
+        /* @var Application|MockObject $app */
+        $app = $this->getMockBuilder(Application::class)->getMock();
 
         // Check that we're actually trying to register the service
         $app->expects($this->once())
